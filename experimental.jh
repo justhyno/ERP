@@ -1,0 +1,47 @@
+
+application {
+  config {
+    baseName portalBackend,
+    applicationType gateway,
+    packageName  mz.gov.mta.dndt,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    clientFramework angular
+  }
+  entities *
+}
+
+application {
+  config {
+    baseName portalGis,
+    applicationType microservice,
+    packageName  mz.gov.mta.dndt,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+  }
+  entities A, B
+}
+
+application {
+  config {
+    baseName portalAgent,
+    applicationType microservice,
+    packageName  mz.gov.mta.dndt,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+  }
+  entities C
+}
+
+entity A {}
+
+entity B {}
+
+entity C {}
+
+entity D {}
+
+relationship OneToMany {
+  A to B
+}
+    
